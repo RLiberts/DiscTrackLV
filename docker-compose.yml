@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: disctrack-db
+    environment:
+      POSTGRES_USER: disctrack
+      POSTGRES_PASSWORD: disctrack
+      POSTGRES_DB: disctrack
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
